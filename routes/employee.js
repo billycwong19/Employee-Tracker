@@ -14,6 +14,7 @@ const db = mysql.createConnection(
   );
 
 // GET 
+
 employee.get('/', (req, res) => {
   const sql = 'SELECT * FROM employee'
   db.query(sql, function (err, result) {
@@ -73,4 +74,4 @@ employee.delete('/delete/:id', (req, res) => {
   })
 })
 
-module.exports = employee;
+module.exports = employee
