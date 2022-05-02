@@ -26,4 +26,35 @@ department.get('/', (req, res) => {
   });
 });
 
+department.post('/add-department', ({ body }, res) => {
+  const sql = `INSERT INTO department (name)
+    VALUES (?)`;
+  const params = [body.name];
+  db.query(sql, params, (err, result) => {
+    if (err) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
+    res.json({
+      message: 'success',
+      data: body
+    });
+  });
+});
+
+department.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
+  const sql = `DELETE FROM department WHERE id = ?`;
+  const params = [id]
+  db.query(sql, params, (err, result) => {
+      if (err) {
+          res.status(400).json({ error: err.message});
+          return;
+      }
+      res.json({
+          message: 'Department Deleted Successfully',
+      })
+  })
+})
+
 module.exports = department

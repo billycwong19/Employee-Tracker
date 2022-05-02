@@ -26,36 +26,51 @@ employee.get('/', (req, res) => {
   });
 });
 
-// employee.post('/add-review', ({ body }, res) => {
-//   const sql = `INSERT INTO reviews (movie_id,review)
-//     VALUES (?,?)`;
-//   const params = [body.movie_id, body.review];
+employee.post('/add-employee', ({ body }, res) => {
+  const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id)
+    VALUES (?,?,?,?)`;
+  const params = [body.first_name, body.last_name, body.role_id, body.manager_id];
 
-//   db.query(sql, params, (err, result) => {
-//     if (err) {
-//       res.status(400).json({ error: err.message });
-//       return;
-//     }
-//     res.json({
-//       message: 'success',
-//       data: body
-//     });
-//   });
-// });
+  db.query(sql, params, (err, result) => {
+    if (err) {
+      res.status(400).json({ error: err.message });
+      return;
+    }
+    res.json({
+      message: 'success',
+      data: body
+    });
+  });
+});
 
-// employee.put('/update-review', ({body}, res) => {
-//   const sql = `UPDATE reviews SET review = '${body.review}' WHERE id = ${body.id};`
-//   db.query(sql, (err, result) => {
-//       if (err) {
-//           res.status(400).json({ error: err.message});
-//           return;
-//       }
-//       res.json({
-//           message: 'success',
-//           data: body
-//       })
-//       console.log(result);
-//   })
-// })
+employee.put('/update-employee', ({body}, res) => {
+  const sql = `UPDATE employee SET first_name = '${body.first_name}', last_name = '${body.last_name}', role_id = ${body.role_id}, manager_id = ${body.manager_id} WHERE id = ${body.id};`
+  db.query(sql, (err, result) => {
+      if (err) {
+          res.status(400).json({ error: err.message});
+          return;
+      }
+      res.json({
+          message: 'success',
+          data: body
+      })
+      console.log(result);
+  })
+})
+
+employee.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
+  const sql = `DELETE FROM employee WHERE id = ?`;
+  const params = [id]
+  db.query(sql, params, (err, result) => {
+      if (err) {
+          res.status(400).json({ error: err.message});
+          return;
+      }
+      res.json({
+          message: 'Employee Deleted Successfully',
+      })
+  })
+})
 
 module.exports = employee;
