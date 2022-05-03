@@ -24,14 +24,14 @@ VALUES
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
     ('chuck', 'chuckster', 1, null),
-    ('sara', 'sarington', 2, null),
+    ('sara', 'sari', 2, null),
     ('mark', 'markington', 3, null),
     ('liz', 'lizzy', 4, null),
     ('carl', 'chuckster', 5, 1),
-    ('miranda', 'k', 6, 2),
-    ('dick', 'a', 7, 3),
-    ('casey', 'd', 8, 4),
-    ('laura', 'f', 9, 1),
-    ('eric', 'e', 10, 2),
-    ('tim', 'h', 11, 3),
-    ('alex', 'n', 12, 4);
+    ('miranda', 'mirra', 6, 2),
+    ('dick', 'dickey', 7, 3),
+    ('casey', 'corndog', 8, 4),
+    ('laura', 'laurens', 9, 1),
+    ('eric', 'easy', 10, 2),
+    ('tim', 'tiny', 11, 3),
+    ('alex', 'allie', 12, 4);
