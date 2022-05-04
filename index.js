@@ -49,12 +49,12 @@ const addDepartment = () => {
           console.log("+++++++++++++++++++++++++++++++++++++")
 inquirer.prompt({
   type: 'input',
-  name: 'name',
+  name: 'department_name',
   message: 'What is the new DEPARTMENT NAME?'
 })
 .then(response => {
   const { department_name } = response
-    db.query('INSERT INTO department (name) VALUES (?)', department_name, (err, result) => {
+    db.query('INSERT INTO department (department_name) VALUES (?)', department_name, (err, result) => {
           console.log("+++++++++++++++++++++++++++++++++++++")
           console.log("+    * * * * * * * * * * * * * *    +")
           console.log("+    *   NEW DEPARTMENT ADDED  *    +")
@@ -81,10 +81,9 @@ inquirer.prompt([{
   name: 'salary',
   message: 'What is the NEW ROLE SALARY?' 
 },{
-  type: 'list',
+  type: 'input',
   name: 'department_id',
-  message: 'What is the DEPARTMENT ID? ( 1 : Toys | 2 : Video-Games | 3 : Candy | 4 : Coal )',
-  choices: [1, 2, 3, 4] 
+  message: 'What is the DEPARTMENT ID?',
 }])
 .then(response => {
     const { title, salary, department_id } = response
@@ -157,11 +156,11 @@ inquirer.prompt([{
 }])
 .then(response => {
   const { id, role_id } = response
-  const sql = `UPDATE employee SET role_id = '${role_id}' WHERE id = ${id};`
+  var sql = `UPDATE employee SET role_id = '${role_id}' WHERE id = ${id};`
     db.query(sql, (err, result) => {
           console.log("+++++++++++++++++++++++++++++++++++++")
           console.log("+    * * * * * * * * * * * * * *    +")
-          console.log("+    *      EMPLOYEE ADDED     *    +")
+          console.log("+    *       ROLE UPDATED      *    +")
           console.log("+    * * * * * * * * * * * * * *    +")
           console.log("+++++++++++++++++++++++++++++++++++++")
           console.table(response)

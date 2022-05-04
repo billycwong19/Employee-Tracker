@@ -14,14 +14,14 @@
 
 
 <div align="center">
-    <img src="images/employeetracker.png" alt="Logo" height="150">
+    <img src="images/employeetrackerlogo.png" alt="Logo" height="100">
   <p align="center">
     <h3>Employee Tracker</h3>
     <br />
     <a href="https://github.com/billycwong19/Employee-Tracker"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Site</a>
+    <a href="https://drive.google.com/file/d/1pqadlNY_24LTTQT3HaKzwTVWwce61JWQ/view?usp=sharing">Video Demo of Application</a>
     ·
     <a href="https://github.com/billycwong19/Employee-Tracker/issues">Report Bug</a>
     ·
@@ -49,7 +49,7 @@
     <img src="" alt="" height="300">
 </div>
 
-<p>The Note Taker app is brought to life by Express and Node.js. By setting up routes and fetch requests, I was able to save data to a database, retrieve it, and delete it, using GET, POST, and DELETE. The HTML was already provided, so I acted as my own back-end development team supplying the proper routes for displaying and retrieving data. This website has been deployed to Heroku: <a href="">View Site</a>.</p>
+<p>The Employee Tracker is a command-line application meant to help any business create a database of their employees, departments, and role types held at the company. It will allow you to keep track of new hires and senior employees, their pay, associated managers, and more. <a href="https://drive.google.com/file/d/1pqadlNY_24LTTQT3HaKzwTVWwce61JWQ/view?usp=sharing">View Video Demo of App</a></p>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
